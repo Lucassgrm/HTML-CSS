@@ -3,12 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu primeiro Exercicio</title>
+    <title>Animation Navbar</title>
+    <style>
+        
+        nav {
+            width: 100px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        a {
+            position: relative;
+            cursor: pointer;
+            color: black;
+            font-size: 28px;
+            padding: 0.5rem 1rem;
+            transition: color 0.25s;
+        }
+        
+        a::after {
+            position: absolute;
+            content: "";
+            inset: 0;
+            background-color: black;
+            scale: 1 0;
+            z-index: -1;
+            transition: 0.45s;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        a:hover::after {
+            scale: 1 1;
+
+        }
+    </style>
 </head>
 <body>
-    <h1>Olá,mundo!</h1>
-    <hr>
-    <p>Esse é meu primeiro documento em html,estou muito feliz!</p>
-    <p>este é um momento unico!estou criando um site!</p>
+    <nav>
+        <a>Home</a>
+        <a>About</a>
+        <a>Work</a>
+        <a>Services</a>
+        <a>Contact</a>
+    </nav>
 </body>
 </html>
